@@ -1,0 +1,46 @@
+###Add A Category Product
+###Create New Product
+POST localhost:8080/api/v1/striking
+Content-Type: application/json
+Authorization:Basic Nate Nate777
+
+{
+  "name": "purple Gloves",
+  "description": "really good gloves",
+  "price" : 250,
+  "type": "Gloves",
+  "imageUrl": "https://cdn11.bigcommerce.com/s-wlnvw17/images/stencil/1280x1280/products/819/1820/641006-10_4_1__81259.1634347797.png?c=2"
+}
+
+###Get all Category Prodcuts
+GET localhost:8080/api/v1/grapplingg
+Authorization:Basic Nate Nate777
+
+###Get A Category Product By Id
+GET localhost:8080/api/v1/striking/52
+Authorization:Basic Nate Nate777
+
+###Update A Category Product
+PUT http://localhost:8080/api/v1/striking/203
+Content-Type: application/json
+Authorization:Basic Nate Nate777
+
+{
+  "name": "Sky Blue Gloves",
+  "description": "really good gloves and blue",
+  "price" : 250,
+  "type": "Gloves",
+  "imageUrl": "https://cdn11.bigcommerce.com/s-wlnvw17/images/stencil/1280x1280/products/819/1820/641006-10_4_1__81259.1634347797.png?c=2"
+}
+
+###Delete Prodcut By Id
+DELETE http://localhost:8080/api/v1/striking/552
+Authorization:Basic Nate Nate777
+
+###Get Page
+GET http://localhost:8080/api/v1/striking/page
+Authorization: Basic Nate Nate777
+
+### get post page with sort and sort order:
+GET http://localhost:8080/api/v1/striking/page?pageSize=10&pageNo=1&sortBy=Category&sortDir=desc&type=gloves
+Authorization: Basic Nate Nate777

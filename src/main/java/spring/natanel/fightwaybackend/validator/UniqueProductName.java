@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME) //we need to check in runtime
 @Constraint(validatedBy = {UniqueProductNameValidator.class})
 public @interface UniqueProductName {
-    String message() default "Post Title must be unique";
+    String message() default "Product Name must be unique";
     //enable validation groups
     Class<?>[] groups() default {};
     //the annotation stores a payload

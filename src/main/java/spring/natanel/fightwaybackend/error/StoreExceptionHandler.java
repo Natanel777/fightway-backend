@@ -4,9 +4,12 @@ import jakarta.validation.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.time.LocalDateTime;
 
@@ -22,6 +25,34 @@ public class StoreExceptionHandler {
         problemDetails.setProperty("resourceName", e.getResourceName());
         problemDetails.setProperty("resourceValue", e.getValue());
         return problemDetails;
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ProblemDetail handleBadRequestException(BadRequestException e){
+        System.out.println("Handling BadRequestException: " + e.getMessage());
+        var problemDetails = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, e.getMessage());
+
+        problemDetails.setProperty("timestamp", LocalDateTime.now());
+        problemDetails.setProperty("resourceName", e.getResourceName());
+        return problemDetails;
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ProblemDetail handleAccessDeniedException(AccessDeniedException e) {
+        var problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, "Access Denied");
+        problemDetail.setProperty("timestamp", LocalDateTime.now());
+        problemDetail.setProperty("message", "You do not have permission to access this resource.");
+        return problemDetail;
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ProblemDetail handleAuthenticationException(AuthenticationException e) {
+        var problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, "Authentication Failed");
+        problemDetail.setProperty("timestamp", LocalDateTime.now());
+        problemDetail.setProperty("message", "Authentication failed. Please check your credentials.");
+        return problemDetail;
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

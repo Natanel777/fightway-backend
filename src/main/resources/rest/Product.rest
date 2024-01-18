@@ -1,0 +1,268 @@
+###Create New Product
+###  "jwt": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A"
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "orange Gloves",
+  "description": "really good gloves",
+  "price" : 250,
+  "type": "Gloves",
+  "category": "Striking",
+  "imageUrl": "https://cdn11.bigcommerce.com/s-wlnvw17/images/stencil/1280x1280/products/819/1820/641006-10_4_1__81259.1634347797.png?c=2"
+}
+
+###Get All Products
+GET http://localhost:8080/api/v1/store
+Authorization:Basic Nate Nate777
+
+###Get Prodcut By Id
+GET http://localhost:8080/api/v1/store/102
+Authorization:Basic Nate Nate777
+
+###Get Prodcut By category
+GET http://localhost:8080/api/v1/store/Striking
+Authorization:Basic Nate Nate777
+
+###Update Product
+PUT http://localhost:8080/api/v1/store/203
+Content-Type: application/json
+Authorization:Basic Nate Nate777
+
+{
+  "name": "Blue Gloves",
+  "description": "really good gloves",
+  "price" : 250,
+  "type": "Gloves",
+  "category": "Striking",
+  "imageUrl": "https://cdn11.bigcommerce.com/s-wlnvw17/images/stencil/1280x1280/products/819/1820/641006-10_4_1__81259.1634347797.png?c=2"
+}
+
+###Delete Prodcut By Id
+DELETE http://localhost:8080/api/v1/store/352
+Authorization:Basic Nate Nate777
+
+###Get Page
+GET http://localhost:8080/api/v1/store/page
+Authorization: Basic Nate Nate777
+
+### get post page with sort and sort order:
+GET http://localhost:8080/api/v1/store/page?pageSize=10&pageNo=1&sortBy=price&sortDir=desc&type=
+Authorization: Basic Nate Nate777
+
+###Shirts MMA
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "MMA Black Shirt",
+  "description": "Comfortable and stylish black shirt featuring our classic logo.",
+  "price": 29.99,
+  "type": "Shirts",
+  "category": "MMA",
+  "imageUrl": "http://localhost:8080/assets/mmaBlackShirt.png"
+}
+
+###Shirts MMA
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "MMA Red Logo Shirt",
+  "description": "Show your passion for MMA with this stylish red shirt featuring our iconic logo.",
+  "price": 34.99,
+  "type": "Shirts",
+  "category": "MMA",
+  "imageUrl": "http://localhost:8080/assets/mmaRedShirt.png"
+}
+
+###Shirts MMA
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Graphic Print Training Shirt",
+  "description": "Breathable training shirt with a unique graphic print design.",
+  "price": 34.99,
+  "type": "Shirts",
+  "category": "MMA",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+}
+
+###Shirts MMA
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Performance Long Sleeve Tee",
+  "description": "High-performance long sleeve tee for intense workout sessions.",
+  "price": 39.99,
+  "type": "Shirts",
+  "category": "MMA",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+}
+
+###grappling
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Premium Jiu-Jitsu Gi",
+  "description": "High-quality Jiu-Jitsu Gi for serious practitioners.",
+  "price": 129.99,
+  "type": "BJJ - GI",
+  "category": "Grappling",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+}
+
+###grappling
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Competition-Ready BJJ Kimono",
+  "description": "Specially designed BJJ Kimono for competition-ready performance.",
+  "price": 149.99,
+  "type": "BJJ - GI",
+  "category": "Grappling",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+}
+
+###grappling
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Classic Brazilian Jiu-Jitsu Gi",
+  "description": "Timeless design with excellent craftsmanship for Brazilian Jiu-Jitsu enthusiasts.",
+  "price": 119.99,
+  "type": "BJJ - GI",
+  "category": "Grappling",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+}
+
+###Punching Bags
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Heavy Duty Punching Bag",
+  "description": "Durable and heavy-duty punching bag for intense workouts.",
+  "price": 349.99,
+  "type": "Punching Bags",
+  "category": "Striking",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+
+}
+
+###Protective Equipment Striking
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Pro Series Headgear",
+  "description": "Top-quality headgear designed for maximum protection during striking training.",
+  "price": 79.99,
+  "type": "Protective Equipment",
+  "category": "Striking",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+}
+
+###Protective Equipment Striking
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Protective Shinguards",
+  "description": "Ensure your safety during training with these durable and comfortable shinguards.",
+  "price": 49.99,
+  "type": "Protective Equipment",
+  "category": "Striking",
+  "imageUrl": "http://localhost:8080/assets/regularShinguards.png"
+}
+
+
+###Protective Equipment Striking
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "GelTech Boxing Gloves",
+  "description": "Premium boxing gloves with GelTech padding for superior hand protection.",
+  "price": 99.99,
+  "type": "Protective Equipment",
+  "category": "Striking",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+
+}
+
+###Protective Equipment Grappling
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Grappling Shin Guards",
+  "description": "High-density shin guards designed for intensive grappling sessions.",
+  "price": 59.99,
+  "type": "Protective Equipment",
+  "category": "Grappling",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+
+}
+
+###Protective Equipment Grappling
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Kontact Elbow Protector",
+  "description": "Protect your elbows during intense training sessions with these high-quality Kontact elbow protectors.",
+  "price": 64.99,
+  "type": "Protective Equipment",
+  "category": "Grappling",
+  "imageUrl": "http://localhost:8080/assets/kontactElbowProtector.png"
+}
+
+###Coach Equipment Striking
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Pro Trainer's Focus Mitts",
+  "description": "High-quality focus mitts designed for trainers to enhance striking precision.",
+  "price": 89.99,
+  "type": "Coach Equipment",
+  "category": "Striking",
+  "imageUrl": "https://www.dropbox.com/scl/fi/ysgdtshk1gyiijom157t5/fightwayExample5.png?rlkey=a58zi09dl1r1xpvisjx188dqr&raw=1"
+}
+
+###Coach Equipment Striking
+POST localhost:8080/api/v1/store
+Content-Type: application/json
+Authorization:Basic Nate Nate777 ###Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOYXRlIiwiaWF0IjoxNzAxMTE5MjcwLCJleHAiOjE3MDM3MTEyNzB9.VNf14Hx3yhymBAVPle1VsQKCMqoTd9I0Yv16SK0Wt04tjDPaGxz_86kWwJfvTS07wxXac_o5CqCh_ia6J7hz6A
+
+{
+  "name": "Professional PU Focus Mitts",
+  "description": "A high-quality pair of focus mitts made with durable PU material. Ideal for precision training in various combat sports.",
+  "price": 79.99,
+  "type": "Coach Equipment",
+  "category": "Striking",
+  "imageUrl": "http://localhost:8080/assets/bigMitts.png"
+}
+
+

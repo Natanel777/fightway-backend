@@ -15,7 +15,7 @@ public class UniqueProductNameValidator implements ConstraintValidator<UniquePro
 
     @Override
     public boolean isValid(String productName, ConstraintValidatorContext context) {
-        Optional<Product> post = postRepository.findByProductName(productName);
+        Optional<Product> post = postRepository.findByName(productName);
 
         //if post with same title does not exist -> GOOD!
         return post.isEmpty();

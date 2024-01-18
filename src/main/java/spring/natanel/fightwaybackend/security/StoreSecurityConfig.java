@@ -3,6 +3,7 @@ package spring.natanel.fightwaybackend.security;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -51,6 +52,7 @@ public class StoreSecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth ->{
                     auth.requestMatchers("/api/v1/auth/**").permitAll(); //not secured
+                    auth.requestMatchers(HttpMethod.GET,"/api/v1/**").permitAll();
                     auth.requestMatchers("/api/v1/**").authenticated();//secured
                     auth.anyRequest().permitAll(); //anything else not secured (Must Be Last! there is importance to order)
                 })

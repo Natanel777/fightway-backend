@@ -13,7 +13,8 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Builder
-@Table(name = "products" ,uniqueConstraints = {@UniqueConstraint(columnNames = "productName")})
+@ToString
+@Table(name = "products" ,uniqueConstraints = {@UniqueConstraint(columnNames = "name")})
 public class Product {
 
     @Id
@@ -21,7 +22,7 @@ public class Product {
     private Long id;
 
     @NotNull
-    private String productName;
+    private String name;
 
     @NotNull
     private String description;
@@ -30,7 +31,7 @@ public class Product {
     private BigDecimal price; // just like double or float without rounding issues
 
     @NotNull
-    private String Type;
+    private String type;
 
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER) // get the roles immediately with the other props

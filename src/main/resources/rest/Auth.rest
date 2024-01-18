@@ -1,0 +1,18 @@
+###Create New User
+POST localhost:8080/api/v1/auth/signup
+Content-Type: application/json
+
+{
+  "email": "natanel777@gmail.com",
+  "username": "Nate",
+  "password": "Nate777"
+}
+
+###Sign a User in (Getting Jwt)
+POST localhost:8080/api/v1/auth/signin
+Content-Type: application/json
+
+{
+  "username": "Nate",
+  "password": "Nate777"
+}

@@ -3,7 +3,6 @@ package spring.natanel.fightwaybackend.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-
 import java.util.List;
 import java.util.Set;
 
@@ -39,14 +38,7 @@ public class Customer {
     )
     private Set<Role> roles;
 
-    //NULL in the beginning it will change after the first order of the client
-
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Order> orderHistory;
 
-    @OneToOne
-    private Cart cart;
-
-    @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL,orphanRemoval = true)
-    private Address address;
 }

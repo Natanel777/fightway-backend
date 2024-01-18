@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Getter
 @Setter
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class ResourceNotFoundException extends RuntimeException{
+public class ResourceNotFoundException extends StoreException{
 
     private final String resourceName; //ex: Product / item
     private final String name; //ex: id/ProductName

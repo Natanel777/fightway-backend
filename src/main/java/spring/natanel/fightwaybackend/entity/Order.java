@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -19,26 +19,36 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderItem> items;
+
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    //LocalDateTime.now()
-    @Temporal(TemporalType.TIMESTAMP)
+    //LocalDate.now()
     @NotNull
-    private Date date;
+    private LocalDate date;
 
     @NotNull
-    private BigDecimal totalAmount;
+    private BigDecimal totalPrice;
 
     @NotNull
     private String paymentInformation;
 
     @NotNull
+    private String address;
+
+    @NotNull
+    private String city;
+
+    @NotNull
+    private String phoneNumber;
+
+    @NotNull
+    private String postalCode;
+
+    @NotNull
     private String status;
-
-
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OrderItem > items;
 
 }

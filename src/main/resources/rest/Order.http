@@ -1,0 +1,78 @@
+POST localhost:8080/api/v1/order
+Content-Type: application/json
+Authorization:Basic Trying2 Trying2
+
+{
+  "items": [
+    {
+      "product": {
+        "id": 1,
+        "name": "Classic Logo T-Shirt",
+        "description": "Description of the product",
+        "price": 29.99,
+        "type": "Type of the product",
+        "category": {
+          "id": 1,
+          "name": "Category Name"
+        },
+        "imageUrl": "URL of the product image"
+      },
+      "quantity": 2,
+      "subtotal": 59.98
+    },
+    {
+      "product": {
+        "id": 2,
+        "name": "MMA Black Shirt",
+        "description": "Description of the product",
+        "price": 34.99,
+        "type": "Type of the product",
+        "category": {
+          "id": 2,
+          "name": "Category Name"
+        },
+        "imageUrl": "URL of the product image"
+      },
+      "quantity": 1,
+      "subtotal": 34.99
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Classic Logo T-Shirt",
+        "description": "Description of the product",
+        "price": 29.99,
+        "type": "Type of the product",
+        "category": {
+          "id": 3,
+          "name": "Category Name"
+        },
+        "imageUrl": "URL of the product image"
+      },
+      "quantity": 2,
+      "subtotal": 59.98
+    }
+  ],
+  "paymentInformation": "Cash",
+  "address": "Address",
+  "city": "City",
+  "phoneNumber": "0542284342",
+  "postalCode": "12345"
+}
+
+###Get customers orders
+GET localhost:8080/api/v1/recentorders
+Authorization:Basic Trying2 Trying2
+
+###Get CartItems With no Items(Empty)
+GET localhost:8080/api/v1/ordermanger
+Authorization:Basic Trying2 Trying2
+
+###Update order status
+PUT http://localhost:8080/api/v1/ordermanager/1
+Content-Type: application/json
+Authorization:Basic Nate Nate777
+
+{
+  "status": "Approved"
+}

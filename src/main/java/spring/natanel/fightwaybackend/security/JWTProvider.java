@@ -15,16 +15,17 @@ import spring.natanel.fightwaybackend.error.BadRequestException;
 import javax.crypto.SecretKey;
 import java.security.Key;
 import java.util.Date;
+import java.util.List;
 
 //https://github.com/jwtk/jjwt#quickstart
 @Component
 public class JWTProvider {
     //read values from application.properties
 
-    @Value("${spring.natanel.blog.secret}")
+    @Value("${spring.natanel.store.secret}")
     private String secret;
 
-    @Value("${spring.natanel.blog.expires}")
+    @Value("${spring.natanel.store.expires}")
     private Long expires;
 
     //1) KEY
@@ -37,12 +38,13 @@ public class JWTProvider {
     }
 
     //2) generate JWT (PAYLOAD-Data-)
-    public String generateToken(String username){
+    public String generateToken(String username, List<String> roles){
         var currentDate = new Date();
         var expiresDate = new Date(currentDate.getTime() + expires);
 
         return Jwts.builder()
                 .subject(username)
+                .claim("roles", roles)
                 .issuedAt(currentDate)
                 .expiration(expiresDate)
                 .signWith(mySecterKey)
