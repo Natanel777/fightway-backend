@@ -4,12 +4,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import spring.natanel.fightwaybackend.dto.auth.SignUpRequestDto;
 import spring.natanel.fightwaybackend.entity.Category;
 import spring.natanel.fightwaybackend.entity.Product;
 import spring.natanel.fightwaybackend.entity.Role;
 import spring.natanel.fightwaybackend.repository.CategoryRepository;
+import spring.natanel.fightwaybackend.repository.CustomerRepository;
 import spring.natanel.fightwaybackend.repository.ProductRepository;
 import spring.natanel.fightwaybackend.repository.RoleRepository;
+import spring.natanel.fightwaybackend.service.auth.CustomerDetailServiceImpl;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -22,6 +25,8 @@ public class FightwayBackendApplication implements CommandLineRunner {
     private final RoleRepository roleRepository;
     private final CategoryRepository categoryRepository;
     private final ProductRepository productRepository;
+    private final CustomerRepository customerRepository;
+    private final CustomerDetailServiceImpl authService;
 
     public static void main(String[] args) {
         SpringApplication.run(FightwayBackendApplication.class, args);
@@ -68,6 +73,10 @@ public class FightwayBackendApplication implements CommandLineRunner {
 
             // Save all products
             productRepository.saveAll(products);
+        }
+
+        if (customerRepository.findAll().isEmpty()){
+            authService.signAdminUp(new SignUpRequestDto("Nate","natanell777@gmail.com","Nate777"));
         }
     }
 }
