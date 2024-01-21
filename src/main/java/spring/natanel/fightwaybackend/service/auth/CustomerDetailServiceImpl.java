@@ -1,6 +1,5 @@
 package spring.natanel.fightwaybackend.service.auth;
 
-
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.modelmapper.ModelMapper;
@@ -53,7 +52,6 @@ public class CustomerDetailServiceImpl implements UserDetailsService {
         //map our roles to Springs SimpleGrantedAuthority
         var roles = user.getRoles().stream().map(r -> new SimpleGrantedAuthority(r.getName())).toList();
 
-        //return new org.springframework.security.core.userdetails.Customer
         //User(Spring) implements UserDetail
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),roles);
     }
