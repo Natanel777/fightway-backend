@@ -109,7 +109,7 @@ Further instruction regarding the endpoints can be found on http://localhost:808
 
 ## License
 
-This project is licensed under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0). Feel free to use and modify the code as needed.
+This project is licensed under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0). Feel free to look up in the information.
 
 For more details, see the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) file.
 
